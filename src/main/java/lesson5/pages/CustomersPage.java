@@ -6,8 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class CustomersPage {
-    public CustomersPage(DriverDealer dealer) {
-        PageFactory.initElements(dealer.createDriver(),this);
+
+    public CustomersPage(DriverDealer dealer,String browser) {
+        PageFactory.initElements(dealer.createDriver(browser),this);
     }
 
     @FindBy(xpath = "//tr[1][@resource=\"customers\"]")

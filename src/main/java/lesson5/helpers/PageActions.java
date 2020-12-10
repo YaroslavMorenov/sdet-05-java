@@ -18,8 +18,8 @@ public class PageActions {
         element.sendKeys(text);
     }
 
-    public static void movePage(Keys key) {
-        Actions action = new Actions(dealer.createDriver());
+    public static void movePage(Keys key,String browser) {
+        Actions action = new Actions(dealer.createDriver(browser));
         action.sendKeys(key).build().perform();
     }
 
@@ -33,8 +33,8 @@ public class PageActions {
         }
     }
 
-    public static void waitForElement(WebElement element) {
-        new WebDriverWait(dealer.createDriver(),EXPLICIT_TIMEOUT)
+    public static void waitForElement(WebElement element,String browser) {
+        new WebDriverWait(dealer.createDriver(browser),EXPLICIT_TIMEOUT)
                 .until(ExpectedConditions.elementToBeClickable(element));
 
     }

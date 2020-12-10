@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class OrdersPage {
-    public OrdersPage(DriverDealer dealer) {
-        PageFactory.initElements(dealer.createDriver(),this);
+    public OrdersPage(DriverDealer dealer,String browser) {
+        PageFactory.initElements(dealer.createDriver(browser),this);
     }
 
     @FindBy(xpath = "//div[@class = 'MuiTabs-root']//button[2][@class = 'MuiButtonBase-root MuiTab-root MuiTab-textColorInherit MuiTab-fullWidth']")

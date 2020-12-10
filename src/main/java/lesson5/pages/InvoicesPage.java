@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class InvoicesPage {
-    public InvoicesPage(DriverDealer dealer) {
-        PageFactory.initElements(dealer.createDriver(),this);
+    public InvoicesPage(DriverDealer dealer,String browser) {
+        PageFactory.initElements(dealer.createDriver(browser),this);
     }
 
     @FindBy(xpath = "//*[@name = 'date_gte']")
